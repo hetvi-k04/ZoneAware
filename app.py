@@ -555,7 +555,8 @@ from xgboost import XGBClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # ---- Load Dataset ----
-data_path = r"C:\Users\Mahek Gohil\Desktop\urban_planning\algorides\api\vadodara_accidents_with_weather_time.csv"
+import os
+data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vadodara_accidents_with_weather_time.csv")
 df = pd.read_csv(data_path)
 
 # ---- CSS ----

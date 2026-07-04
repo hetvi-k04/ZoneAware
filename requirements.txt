@@ -1,0 +1,8 @@
+streamlit
+flask
+gunicorn
+pandas
+folium
+xgboost
+scikit-learn
+plotly

@@ -1,0 +1,20 @@
+services:
+  # 1. Streamlit Dashboard (Main Interactive Web App)
+  - type: web
+    name: zoneaware-dashboard
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+  # 2. Flask Map API (Minimalistic map-only server)
+  - type: web
+    name: zoneaware-map-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

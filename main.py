@@ -4,7 +4,8 @@ from folium.plugins import MarkerCluster
 
 def create_map():
     # Load dataset
-    file_path = r"C:\Users\hp\Downloads\api\vadodara_accidents_with_weather_time.csv"
+    import os
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vadodara_accidents_with_weather_time.csv")
     df = pd.read_csv(file_path)
 
     # Center of Vadodara
